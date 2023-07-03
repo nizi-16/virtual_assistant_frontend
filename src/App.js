@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { MicrophoneIcon } from '@heroicons/react/24/solid'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const handleTalkback = () => {
+        console.log('make api call')
+    }
+
+    return (
+        <div className="App">
+            <div className="headingBar">
+                <h3>Virtual Assistant</h3>
+            </div>
+            <div className="app">
+                <MicrophoneIcon
+                    onClick={handleTalkback}
+                    className="microphoneIcon"
+                />
+
+                <input
+                    type="text"
+                    placeholder="Command"
+                    className="inputField"
+                />
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App
